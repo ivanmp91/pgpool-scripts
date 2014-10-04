@@ -6,7 +6,7 @@
 # load-balancing and failover.
 #
 
-. lib/sh/pgpool.sh
+. lib/pgpool.sh
 
 #
 # Attaches the specified node to the pool
