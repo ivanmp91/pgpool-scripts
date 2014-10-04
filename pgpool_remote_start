@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $# -ne 2 ]
+then
+echo "pgpool_remote_start remote_host remote_datadir"
+exit 1
+fi
+DEST=$1
+DESTDIR=$2
+#start postgres (and replication) on the remote slave database
+ssh postgres@$DEST -o "VerifyHostKeyDNS no" -o "StrictHostKeyChecking no" '/etc/init.d/postgresql start > /dev/null'
